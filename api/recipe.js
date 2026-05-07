@@ -13,6 +13,9 @@ export default async function handler(req, res) {
       body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
     });
     const data = await response.json();
+    if (!data.candidates || !data.candidates[0]) {
+      return res.status(500).json({ error: 'Gemini error: ' + JSON.stringify(data) });
+    }
     const text = data.candidates[0].content.parts[0].text;
     const clean = text.replace(/```json|```/g, '').trim();
     const recipe = JSON.parse(clean);
