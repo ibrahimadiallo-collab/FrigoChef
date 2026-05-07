@@ -8,374 +8,93 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --coral: #D85A30;
-  --coral-dark: #993C1D;
-  --coral-light: #FAECE7;
-  --coral-border: #F5C4B3;
-  --text: #1a1a18;
-  --text-2: #5a5a55;
-  --text-3: #9a9a92;
-  --bg: #fafaf7;
-  --bg-2: #f2f0ea;
-  --border: rgba(0,0,0,0.1);
-  --radius: 12px;
-  --radius-sm: 8px;
+  --coral: #D85A30; --coral-dark: #993C1D; --coral-light: #FAECE7; --coral-border: #F5C4B3;
+  --text: #1a1a18; --text-2: #5a5a55; --text-3: #9a9a92;
+  --bg: #fafaf7; --bg-2: #f2f0ea; --border: rgba(0,0,0,0.1);
+  --radius: 12px; --radius-sm: 8px;
 }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-}
-
-/* NAV */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(250,250,247,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid var(--border);
-  padding: 0 1.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 56px;
-}
-.logo {
-  font-family: 'Lora', serif;
-  font-size: 20px; font-weight: 500;
-  color: var(--text);
-}
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.92); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { font-family: 'Lora', serif; font-size: 20px; font-weight: 500; }
 .logo span { color: var(--coral); }
-.nav-cta {
-  background: var(--coral);
-  color: white;
-  border: none;
-  border-radius: 99px;
-  padding: 7px 16px;
-  font-family: inherit;
-  font-size: 13px; font-weight: 500;
-  cursor: pointer;
-  transition: background .15s;
-}
+.nav-cta { background: var(--coral); color: white; border: none; border-radius: 99px; padding: 7px 16px; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; transition: background .15s; }
 .nav-cta:hover { background: var(--coral-dark); }
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 4rem 1.5rem 3rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.hero-badge {
-  display: inline-block;
-  background: var(--coral-light);
-  color: var(--coral-dark);
-  border: 0.5px solid var(--coral-border);
-  border-radius: 99px;
-  padding: 4px 14px;
-  font-size: 12px; font-weight: 500;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.03em;
-}
-.hero h1 {
-  font-family: 'Lora', serif;
-  font-size: clamp(2rem, 6vw, 3rem);
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
+.hero { text-align: center; padding: 4rem 1.5rem 3rem; max-width: 600px; margin: 0 auto; }
+.hero-badge { display: inline-block; background: var(--coral-light); color: var(--coral-dark); border: 0.5px solid var(--coral-border); border-radius: 99px; padding: 4px 14px; font-size: 12px; font-weight: 500; margin-bottom: 1.25rem; }
+.hero h1 { font-family: 'Lora', serif; font-size: clamp(2rem,6vw,3rem); font-weight: 500; line-height: 1.2; margin-bottom: 1rem; }
 .hero h1 em { font-style: italic; color: var(--coral); }
-.hero p {
-  font-size: 16px;
-  color: var(--text-2);
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-
-/* APP CARD */
-.app-card {
-  background: white;
-  border: 0.5px solid var(--border);
-  border-radius: 20px;
-  padding: 2rem;
-  max-width: 660px;
-  margin: 0 auto 3rem;
-  box-shadow: 0 4px 40px rgba(0,0,0,0.06);
-}
-
-/* INGREDIENT INPUT */
-.field-label {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 8px;
-  display: block;
-}
-.tag-input {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--bg);
-  padding: 10px;
-  min-height: 52px;
-  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
-  cursor: text;
-  transition: border-color .15s;
-}
+.hero p { font-size: 16px; color: var(--text-2); line-height: 1.7; margin-bottom: 2rem; }
+.app-card { background: white; border: 0.5px solid var(--border); border-radius: 20px; padding: 2rem; max-width: 660px; margin: 0 auto 3rem; box-shadow: 0 4px 40px rgba(0,0,0,0.06); }
+.field-label { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; display: block; }
+.tag-input { border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg); padding: 10px; min-height: 52px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; cursor: text; transition: border-color .15s; }
 .tag-input:focus-within { border-color: var(--coral); }
-.tag-input input {
-  border: none; outline: none; background: transparent;
-  font-family: inherit; font-size: 14px; color: var(--text);
-  flex: 1; min-width: 140px; padding: 2px 4px;
-}
+.tag-input input { border: none; outline: none; background: transparent; font-family: inherit; font-size: 14px; color: var(--text); flex: 1; min-width: 140px; padding: 2px 4px; }
 .tag-input input::placeholder { color: var(--text-3); }
-.tag {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: var(--coral-light);
-  color: var(--coral-dark);
-  border: 0.5px solid var(--coral-border);
-  border-radius: 99px;
-  padding: 3px 10px 3px 12px;
-  font-size: 13px; font-weight: 500;
-  animation: tagIn .15s ease;
-}
+.tag { display: inline-flex; align-items: center; gap: 5px; background: var(--coral-light); color: var(--coral-dark); border: 0.5px solid var(--coral-border); border-radius: 99px; padding: 3px 10px 3px 12px; font-size: 13px; font-weight: 500; animation: tagIn .15s ease; }
 @keyframes tagIn { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
-.tag button {
-  background: none; border: none; cursor: pointer;
-  color: var(--coral-dark); font-size: 13px; line-height: 1;
-  padding: 0; opacity: .6;
-}
+.tag button { background: none; border: none; cursor: pointer; color: var(--coral-dark); font-size: 13px; opacity: .6; }
 .tag button:hover { opacity: 1; }
 .hint { font-size: 12px; color: var(--text-3); margin-top: 6px; }
-
-/* OPTIONS */
-.options-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-  margin: 1.25rem 0;
-}
+.options-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.25rem 0; }
 .select-wrap { position: relative; }
-.select-wrap select {
-  width: 100%; appearance: none;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 10px 32px 10px 12px;
-  font-family: inherit; font-size: 14px; color: var(--text);
-  cursor: pointer;
-}
-.select-wrap::after {
-  content: '▾'; position: absolute; right: 12px; top: 50%;
-  transform: translateY(-50%); pointer-events: none;
-  font-size: 11px; color: var(--text-3);
-}
-
-/* CTA BUTTON */
-.btn-main {
-  width: 100%; padding: 14px;
-  background: var(--coral); color: white;
-  border: none; border-radius: var(--radius-sm);
-  font-family: inherit; font-size: 15px; font-weight: 500;
-  cursor: pointer; transition: background .15s, transform .1s;
-  letter-spacing: 0.01em;
-}
+.select-wrap select { width: 100%; appearance: none; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 32px 10px 12px; font-family: inherit; font-size: 14px; color: var(--text); cursor: pointer; }
+.select-wrap::after { content: '▾'; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 11px; color: var(--text-3); }
+.btn-main { width: 100%; padding: 14px; background: var(--coral); color: white; border: none; border-radius: var(--radius-sm); font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer; transition: background .15s, transform .1s; }
 .btn-main:hover { background: var(--coral-dark); }
 .btn-main:active { transform: scale(0.99); }
 .btn-main:disabled { background: var(--bg-2); color: var(--text-3); cursor: not-allowed; }
-
-/* LOADING */
-.loading {
-  text-align: center; padding: 2.5rem; color: var(--text-2); font-size: 14px;
-}
-.spinner {
-  display: inline-block; width: 22px; height: 22px;
-  border: 2px solid var(--border); border-top-color: var(--coral);
-  border-radius: 50%; animation: spin .8s linear infinite; margin-bottom: 12px;
-}
+.loading { text-align: center; padding: 2.5rem; color: var(--text-2); font-size: 14px; }
+.spinner { display: inline-block; width: 22px; height: 22px; border: 2px solid var(--border); border-top-color: var(--coral); border-radius: 50%; animation: spin .8s linear infinite; margin-bottom: 12px; }
 @keyframes spin { to { transform: rotate(360deg); } }
-
-/* RECIPE CARD */
 .recipe-wrap { margin-top: 1.5rem; animation: fadeUp .4s ease; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
-
-.recipe-header {
-  background: var(--coral-light);
-  border: 0.5px solid var(--coral-border);
-  border-radius: var(--radius) var(--radius) 0 0;
-  padding: 1.25rem 1.5rem;
-}
-.recipe-name {
-  font-family: 'Lora', serif;
-  font-size: 22px; font-weight: 500;
-  color: #4A1B0C; margin-bottom: 6px;
-}
-.recipe-meta {
-  display: flex; gap: 16px; flex-wrap: wrap;
-  font-size: 13px; color: var(--coral-dark);
-}
-.recipe-body {
-  border: 0.5px solid var(--border); border-top: none;
-  border-radius: 0 0 var(--radius) var(--radius);
-  overflow: hidden;
-}
-.recipe-section {
-  padding: 1.25rem 1.5rem;
-  border-bottom: 0.5px solid var(--border);
-}
+.recipe-header { background: var(--coral-light); border: 0.5px solid var(--coral-border); border-radius: var(--radius) var(--radius) 0 0; padding: 1.25rem 1.5rem; }
+.recipe-name { font-family: 'Lora', serif; font-size: 22px; font-weight: 500; color: #4A1B0C; margin-bottom: 6px; }
+.recipe-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--coral-dark); }
+.recipe-body { border: 0.5px solid var(--border); border-top: none; border-radius: 0 0 var(--radius) var(--radius); overflow: hidden; }
+.recipe-section { padding: 1.25rem 1.5rem; border-bottom: 0.5px solid var(--border); }
 .recipe-section:last-child { border-bottom: none; }
-.section-title {
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--text-3); margin-bottom: 12px;
-}
-
-/* INGREDIENT LIST con affiliazione */
+.section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
 .ing-list { list-style: none; }
-.ing-item {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 10px; padding: 7px 0;
-  border-bottom: 0.5px solid var(--border);
-  font-size: 14px;
-}
+.ing-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 0.5px solid var(--border); font-size: 14px; }
 .ing-item:last-child { border-bottom: none; }
 .ing-name { display: flex; align-items: center; gap: 8px; }
 .ing-name::before { content:'—'; color: var(--coral); font-weight: 500; }
-.ing-link {
-  display: inline-flex; align-items: center; gap: 4px;
-  background: #feede7; color: var(--coral-dark);
-  border: 0.5px solid var(--coral-border);
-  border-radius: 99px;
-  padding: 3px 10px;
-  font-size: 12px; font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background .12s;
-  flex-shrink: 0;
-}
+.ing-link { display: inline-flex; align-items: center; gap: 4px; background: #feede7; color: var(--coral-dark); border: 0.5px solid var(--coral-border); border-radius: 99px; padding: 3px 10px; font-size: 12px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background .12s; flex-shrink: 0; }
 .ing-link:hover { background: var(--coral-light); }
-.ing-link svg { width: 11px; height: 11px; }
-
-/* STEPS */
 .steps-list { list-style: none; counter-reset: steps; }
-.step-item {
-  counter-increment: steps;
-  padding: 0 0 14px 30px;
-  position: relative;
-  font-size: 14px; line-height: 1.65;
-  color: var(--text);
-}
-.step-item::before {
-  content: counter(steps);
-  position: absolute; left: 0; top: 1px;
-  width: 20px; height: 20px;
-  background: var(--coral); color: white;
-  border-radius: 50%; font-size: 11px; font-weight: 500;
-  display: flex; align-items: center; justify-content: center;
-}
-
-/* RECIPE FOOTER */
-.recipe-footer {
-  display: flex; gap: 8px; padding: 1rem 1.5rem;
-  border-top: 0.5px solid var(--border);
-  flex-wrap: wrap;
-}
-.btn-ghost {
-  font-family: inherit; font-size: 13px; font-weight: 500;
-  padding: 7px 14px; border-radius: var(--radius-sm);
-  border: 0.5px solid var(--border);
-  background: transparent; color: var(--text-2);
-  cursor: pointer; transition: background .1s;
-}
+.step-item { counter-increment: steps; padding: 0 0 14px 30px; position: relative; font-size: 14px; line-height: 1.65; }
+.step-item::before { content: counter(steps); position: absolute; left: 0; top: 1px; width: 20px; height: 20px; background: var(--coral); color: white; border-radius: 50%; font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; }
+.recipe-footer { display: flex; gap: 8px; padding: 1rem 1.5rem; border-top: 0.5px solid var(--border); flex-wrap: wrap; }
+.btn-ghost { font-family: inherit; font-size: 13px; font-weight: 500; padding: 7px 14px; border-radius: var(--radius-sm); border: 0.5px solid var(--border); background: transparent; color: var(--text-2); cursor: pointer; transition: background .1s; }
 .btn-ghost:hover { background: var(--bg-2); }
-
-/* PRO BANNER */
-.pro-banner {
-  background: linear-gradient(135deg, #1a1a18 0%, #2e2e2a 100%);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin-top: 1.5rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  flex-wrap: wrap;
-}
-.pro-banner-text h3 {
-  font-family: 'Lora', serif;
-  color: white; font-size: 18px; margin-bottom: 4px;
-}
+.pro-banner { background: linear-gradient(135deg, #1a1a18 0%, #2e2e2a 100%); border-radius: var(--radius); padding: 1.5rem; margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.pro-banner-text h3 { font-family: 'Lora', serif; color: white; font-size: 18px; margin-bottom: 4px; }
 .pro-banner-text p { color: #a0a098; font-size: 13px; }
-.btn-pro {
-  background: var(--coral); color: white;
-  border: none; border-radius: 99px;
-  padding: 10px 22px;
-  font-family: inherit; font-size: 14px; font-weight: 500;
-  cursor: pointer; white-space: nowrap;
-  transition: background .15s;
-}
+.btn-pro { background: var(--coral); color: white; border: none; border-radius: 99px; padding: 10px 22px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: background .15s; }
 .btn-pro:hover { background: var(--coral-dark); }
-
-/* ERROR */
-.error-box {
-  background: #FEF2F2; border: 0.5px solid #FECACA;
-  border-radius: var(--radius-sm); padding: 12px 16px;
-  font-size: 14px; color: #991B1B;
-}
-
-/* FREE LIMIT BAR */
-.limit-bar {
-  background: var(--bg-2); border-radius: var(--radius-sm);
-  padding: 10px 14px;
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: 13px; margin-top: 1rem;
-}
+.error-box { background: #FEF2F2; border: 0.5px solid #FECACA; border-radius: var(--radius-sm); padding: 12px 16px; font-size: 14px; color: #991B1B; }
+.limit-bar { background: var(--bg-2); border-radius: var(--radius-sm); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; margin-top: 1rem; }
 .limit-dots { display: flex; gap: 5px; }
-.dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--coral);
-}
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--coral); }
 .dot.empty { background: var(--border); }
-
-/* AFFILIATE DISCLAIMER */
-.disclaimer {
-  max-width: 660px; margin: 0 auto 2rem;
-  font-size: 11px; color: var(--text-3);
-  text-align: center; line-height: 1.6;
-  padding: 0 1.5rem;
-}
-
-/* FOOTER */
-footer {
-  border-top: 0.5px solid var(--border);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-size: 12px; color: var(--text-3);
-}
-
-/* RESPONSIVE */
-@media (max-width: 540px) {
-  .app-card { padding: 1.25rem; border-radius: 14px; }
-  .options-row { grid-template-columns: 1fr; }
-  .pro-banner { flex-direction: column; }
-  .recipe-body { border-radius: 0 0 14px 14px; }
-  .recipe-header { border-radius: 14px 14px 0 0; }
-}
+.disclaimer { max-width: 660px; margin: 0 auto 2rem; font-size: 11px; color: var(--text-3); text-align: center; line-height: 1.6; padding: 0 1.5rem; }
+footer { border-top: 0.5px solid var(--border); padding: 2rem 1.5rem; text-align: center; font-size: 12px; color: var(--text-3); }
+@media (max-width: 540px) { .app-card { padding: 1.25rem; border-radius: 14px; } .options-row { grid-template-columns: 1fr; } .pro-banner { flex-direction: column; } }
 </style>
 </head>
 <body>
-
 <nav>
   <div class="logo">Frigo<span>Chef</span></div>
   <button class="nav-cta" onclick="openPro()">Passa a Pro — 4,99€/mese</button>
 </nav>
-
 <div class="hero">
   <div class="hero-badge">✦ Powered by AI</div>
   <h1>Cucina quello<br>che <em>hai già</em> in casa</h1>
   <p>Inserisci gli ingredienti del tuo frigo e l'AI crea una ricetta completa in secondi. Niente sprechi, niente indecisioni.</p>
 </div>
-
 <div class="app-card">
-
   <section style="margin-bottom:1.25rem">
     <label class="field-label">Ingredienti nel frigo</label>
     <div class="tag-input" id="tagBox">
@@ -383,7 +102,6 @@ footer {
     </div>
     <p class="hint">Premi Invio o virgola per aggiungere · Backspace per cancellare</p>
   </section>
-
   <div class="options-row">
     <div>
       <label class="field-label">Tipo di pasto</label>
@@ -407,11 +125,7 @@ footer {
       </div>
     </div>
   </div>
-
-  <button class="btn-main" id="cookBtn" onclick="findRecipe()">
-    Trova ricetta →
-  </button>
-
+  <button class="btn-main" id="cookBtn" onclick="findRecipe()">Trova ricetta →</button>
   <div class="limit-bar" id="limitBar">
     <span style="color:#5a5a55">Ricette gratuite oggi</span>
     <div class="limit-dots">
@@ -420,9 +134,7 @@ footer {
       <div class="dot empty" id="d3"></div>
     </div>
   </div>
-
   <div id="result"></div>
-
   <div class="pro-banner" id="proBanner" style="display:none">
     <div class="pro-banner-text">
       <h3>Hai usato le ricette gratuite 🎉</h3>
@@ -430,199 +142,80 @@ footer {
     </div>
     <button class="btn-pro" onclick="openPro()">Sblocca Pro — 4,99€/mese</button>
   </div>
-
 </div>
-
 <p class="disclaimer">
-  * I link "Acquista" sono link affiliati Amazon. Se acquisti tramite questi link, 
-  FrigoChef riceve una piccola commissione senza costi aggiuntivi per te.<br>
-  FrigoChef partecipa al Programma di Affiliazione Amazon EU, un programma di affiliazione che permette ai siti di percepire una commissione pubblicitaria pubblicizzando e fornendo link al sito amazon.it.
+  * I link "Acquista" sono link affiliati Amazon. FrigoChef partecipa al Programma di Affiliazione Amazon EU.
 </p>
-
-<footer>
-  © 2025 FrigoChef · <a href="#" style="color:inherit">Privacy</a> · <a href="#" style="color:inherit">Termini</a>
-</footer>
-
+<footer>© 2025 FrigoChef · <a href="#" style="color:inherit">Privacy</a> · <a href="#" style="color:inherit">Termini</a></footer>
 <script>
-const AMAZON_TAG = 'frigochef-21'; // ← sostituisci con il tuo Amazon tag
-const STRIPE_LINK = 'https://buy.stripe.com/TUOLINK'; // ← sostituisci con il tuo link Stripe
-
+const AMAZON_TAG = 'frigochef-21';
+const STRIPE_LINK = 'https://buy.stripe.com/TUOLINK';
 const tags = [];
 let usedToday = parseInt(localStorage.getItem('fc_used') || '0');
 let lastDate = localStorage.getItem('fc_date') || '';
 const FREE_LIMIT = 3;
-
 function todayStr() { return new Date().toISOString().slice(0,10); }
-
 function checkReset() {
-  if (lastDate !== todayStr()) {
-    usedToday = 0;
-    localStorage.setItem('fc_used', '0');
-    localStorage.setItem('fc_date', todayStr());
-  }
+  if (lastDate !== todayStr()) { usedToday = 0; localStorage.setItem('fc_used','0'); localStorage.setItem('fc_date', todayStr()); }
 }
-
 function updateLimitBar() {
   checkReset();
-  for (let i=1; i<=3; i++) {
-    document.getElementById('d'+i).className = 'dot' + (i<=usedToday ? '' : ' empty');
-  }
+  for (let i=1; i<=3; i++) { document.getElementById('d'+i).className = 'dot'+(i<=usedToday?'':' empty'); }
 }
-
 updateLimitBar();
-
 function renderTags() {
   const box = document.getElementById('tagBox');
   box.querySelectorAll('.tag').forEach(t => t.remove());
-  tags.forEach((tag, i) => {
+  tags.forEach((tag,i) => {
     const el = document.createElement('span');
     el.className = 'tag';
-    el.innerHTML = `${tag}<button onclick="removeTag(${i})">✕</button>`;
+    el.innerHTML = tag+'<button onclick="removeTag('+i+')">✕</button>';
     box.insertBefore(el, document.getElementById('ingredientInput'));
   });
 }
-
 function removeTag(i) { tags.splice(i,1); renderTags(); }
-function addTag(val) {
-  const v = val.trim().toLowerCase();
-  if (v && !tags.includes(v)) { tags.push(v); renderTags(); }
-}
-
+function addTag(val) { const v=val.trim().toLowerCase(); if(v&&!tags.includes(v)){tags.push(v);renderTags();} }
 document.getElementById('ingredientInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter' || e.key === ',') {
-    e.preventDefault();
-    const v = e.target.value.replace(',','').trim();
-    if (v) { addTag(v); e.target.value = ''; }
-  }
-  if (e.key === 'Backspace' && !e.target.value && tags.length) {
-    tags.pop(); renderTags();
-  }
+  if (e.key==='Enter'||e.key===',') { e.preventDefault(); const v=e.target.value.replace(',','').trim(); if(v){addTag(v);e.target.value='';} }
+  if (e.key==='Backspace'&&!e.target.value&&tags.length) { tags.pop(); renderTags(); }
 });
-document.getElementById('tagBox').addEventListener('click', () => {
-  document.getElementById('ingredientInput').focus();
-});
-
-function getAffiliateLink(ingrediente) {
-  const q = encodeURIComponent(ingrediente);
-  return `https://www.amazon.it/s?k=${q}&tag=${AMAZON_TAG}`;
-}
-
-function openPro() {
-  window.open(STRIPE_LINK, '_blank');
-}
-
+document.getElementById('tagBox').addEventListener('click', () => document.getElementById('ingredientInput').focus());
+function getAffiliateLink(ing) { return 'https://www.amazon.it/s?k='+encodeURIComponent(ing)+'&tag='+AMAZON_TAG; }
+function openPro() { window.open(STRIPE_LINK,'_blank'); }
 async function findRecipe() {
   checkReset();
   const input = document.getElementById('ingredientInput').value.trim();
-  if (input) { addTag(input); document.getElementById('ingredientInput').value = ''; }
-  if (tags.length < 2) {
-    document.getElementById('result').innerHTML = '<div class="error-box" style="margin-top:1rem">Aggiungi almeno 2 ingredienti per trovare una ricetta.</div>';
-    return;
-  }
-  if (usedToday >= FREE_LIMIT) {
-    document.getElementById('proBanner').style.display = 'flex';
-    document.getElementById('result').innerHTML = '';
-    return;
-  }
-
+  if (input) { addTag(input); document.getElementById('ingredientInput').value=''; }
+  if (tags.length < 2) { document.getElementById('result').innerHTML='<div class="error-box" style="margin-top:1rem">Aggiungi almeno 2 ingredienti.</div>'; return; }
+  if (usedToday >= FREE_LIMIT) { document.getElementById('proBanner').style.display='flex'; document.getElementById('result').innerHTML=''; return; }
   const btn = document.getElementById('cookBtn');
   const result = document.getElementById('result');
-  const meal = document.getElementById('mealType').value;
-  const time = document.getElementById('timeAvail').value;
-
-  btn.disabled = true;
-  btn.textContent = 'Sto cucinando…';
-  result.innerHTML = `<div class="loading" style="margin-top:1.5rem"><div class="spinner"></div><br>L'AI sta creando la tua ricetta…</div>`;
-
-  const prompt = `Sei uno chef italiano esperto. L'utente ha questi ingredienti: ${tags.join(', ')}.
-Crea UNA ricetta per ${meal}, tempo: ${time}.
-Rispondi SOLO con JSON valido, zero testo extra, zero backtick:
-{
-  "nome": "Nome del piatto",
-  "tempo": "X minuti",
-  "porzioni": "X persone",
-  "difficolta": "Facile",
-  "ingredienti": ["quantità ingrediente", ...],
-  "passaggi": ["Passo dettagliato 1", ...]
-}`;
-
+  btn.disabled = true; btn.textContent = 'Sto cucinando…';
+  result.innerHTML = '<div class="loading" style="margin-top:1.5rem"><div class="spinner"></div><br>L\'AI sta creando la tua ricetta…</div>';
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/api/recipe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        messages: [{ role: 'user', content: prompt }]
-      })
+      body: JSON.stringify({ ingredienti: tags.join(', '), pasto: document.getElementById('mealType').value, tempo: document.getElementById('timeAvail').value })
     });
-    const data = await res.json();
-    const text = data.content.map(b => b.text||'').join('');
-    const clean = text.replace(/```json|```/g,'').trim();
-    const recipe = JSON.parse(clean);
-
-    usedToday++;
-    localStorage.setItem('fc_used', String(usedToday));
-    localStorage.setItem('fc_date', todayStr());
-    updateLimitBar();
-    renderRecipe(recipe);
-    if (usedToday >= FREE_LIMIT) {
-      document.getElementById('proBanner').style.display = 'flex';
-    }
+    const recipe = await res.json();
+    if (recipe.error) throw new Error(recipe.error);
+    usedToday++; localStorage.setItem('fc_used', String(usedToday)); localStorage.setItem('fc_date', todayStr());
+    updateLimitBar(); renderRecipe(recipe);
+    if (usedToday >= FREE_LIMIT) document.getElementById('proBanner').style.display='flex';
   } catch(err) {
-    result.innerHTML = `<div class="error-box" style="margin-top:1rem">Qualcosa è andato storto. Riprova.<br><small style="opacity:.6">${err.message}</small></div>`;
+    result.innerHTML = '<div class="error-box" style="margin-top:1rem">Qualcosa è andato storto. Riprova.<br><small style="opacity:.6">'+err.message+'</small></div>';
   }
-
-  btn.disabled = false;
-  btn.textContent = 'Trova un\'altra ricetta →';
+  btn.disabled=false; btn.textContent='Trova un\'altra ricetta →';
 }
-
 function renderRecipe(r) {
   const result = document.getElementById('result');
   const ingsHtml = (r.ingredienti||[]).map(i => {
-    const parola = i.replace(/^\d[\d.,]* ?(g|kg|ml|l|cucchiai?|cucchiaini?|tazze?|fette?|spicchi?|rametti?)?\s*/i,'').split(' ').slice(0,3).join(' ');
-    return `<li class="ing-item">
-      <span class="ing-name">${i}</span>
-      <a class="ing-link" href="${getAffiliateLink(parola)}" target="_blank" rel="noopener noreferrer sponsored">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
-        Acquista
-      </a>
-    </li>`;
+    const p = i.replace(/^\d[\d.,]* ?(g|kg|ml|l|cucchiai?|cucchiaini?|tazze?|fette?|spicchi?)?\s*/i,'').split(' ').slice(0,3).join(' ');
+    return '<li class="ing-item"><span class="ing-name">'+i+'</span><a class="ing-link" href="'+getAffiliateLink(p)+'" target="_blank" rel="noopener noreferrer sponsored">🛒 Acquista</a></li>';
   }).join('');
-
-  const stepsHtml = (r.passaggi||[]).map(p => `<li class="step-item">${p}</li>`).join('');
-
-  result.innerHTML = `
-    <div class="recipe-wrap">
-      <div class="recipe-header">
-        <div class="recipe-name">${r.nome||'La tua ricetta'}</div>
-        <div class="recipe-meta">
-          <span>⏱ ${r.tempo||''}</span>
-          <span>👥 ${r.porzioni||''}</span>
-          <span>📊 ${r.difficolta||''}</span>
-        </div>
-      </div>
-      <div class="recipe-body">
-        <div class="recipe-section">
-          <div class="section-title">Ingredienti</div>
-          <ul class="ing-list">${ingsHtml}</ul>
-        </div>
-        <div class="recipe-section">
-          <div class="section-title">Procedimento</div>
-          <ol class="steps-list">${stepsHtml}</ol>
-        </div>
-        <div class="recipe-footer">
-          <button class="btn-ghost" onclick="findRecipe()">Altra ricetta</button>
-          <button class="btn-ghost" onclick="copyRecipe()">Copia ricetta</button>
-          <button class="btn-ghost" onclick="openPro()" style="margin-left:auto;color:var(--coral);border-color:var(--coral-border)">⭐ Sblocca Pro</button>
-        </div>
-      </div>
-    </div>`;
-}
-
-function copyRecipe() {
-  const el = document.querySelector('.recipe-wrap');
-  if (el) navigator.clipboard.writeText(el.innerText).then(() => alert('Ricetta copiata!'));
+  const stepsHtml = (r.passaggi||[]).map(p => '<li class="step-item">'+p+'</li>').join('');
+  result.innerHTML = '<div class="recipe-wrap"><div class="recipe-header"><div class="recipe-name">'+(r.nome||'La tua ricetta')+'</div><div class="recipe-meta"><span>⏱ '+r.tempo+'</span><span>👥 '+r.porzioni+'</span><span>📊 '+r.difficolta+'</span></div></div><div class="recipe-body"><div class="recipe-section"><div class="section-title">Ingredienti</div><ul class="ing-list">'+ingsHtml+'</ul></div><div class="recipe-section"><div class="section-title">Procedimento</div><ol class="steps-list">'+stepsHtml+'</ol></div><div class="recipe-footer"><button class="btn-ghost" onclick="findRecipe()">Altra ricetta</button><button class="btn-ghost" onclick="navigator.clipboard.writeText(document.querySelector(\'.recipe-wrap\').innerText).then(()=>alert(\'Copiata!\'))">Copia ricetta</button><button class="btn-ghost" onclick="openPro()" style="margin-left:auto;color:var(--coral);border-color:var(--coral-border)">⭐ Pro</button></div></div></div>';
 }
 </script>
 </body>
